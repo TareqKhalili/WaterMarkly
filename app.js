@@ -9,10 +9,10 @@ const run = async () => {
     chalk.blue(figlet.textSync("WaterMark", { horizontalLayout: "full" }))
   );
 
-  const input = await inquirer.askGithubCredentials();
+  const input = await inquirer.askForCoordinates();
   console.log(input.position);
   let { x_POS, y_POS } = setXY(input);
-  await editor(x_POS, y_POS);
+  editor(x_POS, y_POS);
   console.log(
     chalk.green("All Complete!")
   );
